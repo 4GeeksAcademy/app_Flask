@@ -1,0 +1,15 @@
+artifact_uri: file:///workspaces/app_Flask/src/mlruns/289085622876490514/82fb76dc925c4e12b325f91113300da1/artifacts
+end_time: 1750634906383
+entry_point_name: ''
+experiment_id: '289085622876490514'
+lifecycle_stage: active
+run_id: 82fb76dc925c4e12b325f91113300da1
+run_name: DecisionTreeRegressor V2
+run_uuid: 82fb76dc925c4e12b325f91113300da1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1750634906362
+status: 4
+tags: []
+user_id: vscode
