@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Celulares_ Model Pediction</title>
+</head>
+<body>
+    <h2>Introduce the values</h2>
+    
+    <form action="/" method="post">
+        battery_power: <input type="number" step="any" name="val1" required value="1000"><br><br>
+        clock_speed: <input type="number" step="any" name="val2" required value="1"><br><br>
+        dual_sim: <input type="number" step="any" name="val3" required value="0"><br><br>
+        four_g: <input type="number" step="any" name="val4" required value="1"><br><br>
+        int_memory: <input type="number" step="any" name="val5" required value="1"><br><br>
+        n_cores: <input type="number" step="any" name="val6" required value="0"><br><br>
+        ram: <input type="number" step="any" name="val7" required value="16"><br><br>
+        touch_screen: <input type="number" step="any" name="val8" required value="0"><br><br>
+        wifi: <input type="number" step="any" name="val9" required value="1"><br><br>
+        three_g: <input type="number" step="any" name="val10" required value="1"><br><br>
+        <input type="submit" value="Predecir">
+    </form>
+    
+    {% if prediction is not none %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
