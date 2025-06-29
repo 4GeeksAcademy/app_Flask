@@ -35,16 +35,15 @@ def index():
             
             # Collect and validate form data
             input_data = {
-                "battery_power": request.form.get("val1"),
-                "clock_speed": request.form.get("val2"),
-                "dual_sim": request.form.get("val3"),
-                "four_g": request.form.get("val4"),
-                "int_memory": request.form.get("val5"),
-                "n_cores": request.form.get("val6"),
-                "ram": request.form.get("val7"),
-                "touch_screen": request.form.get("val8"),
-                "wifi": request.form.get("val9"),
-                "three_g": request.form.get("val10")
+                "Time_spent_Alone": request.form.get("val1"),
+                "Stage_fear": request.form.get("val2"),
+                "Social_event_attendance": request.form.get("val3"),
+                "Going_outside": request.form.get("val4"),
+                "Drained_after_socializing": request.form.get("val5"),
+                "Friends_circle_size": request.form.get("val6"),
+                "Post_frequency": request.form.get("val7"),
+                "Personality": request.form.get("val8"),
+               
             }            
             
             logger.debug(f"Raw input data: {input_data}")
