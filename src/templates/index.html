@@ -1,61 +1,81 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Personalidad - Model prediction</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Personalidad</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f4f4;
+        Body {
+            background-color: #f8f9fa;
         }
-        form {
-            background-color: #fff;
+        .container {
+            margin-top: 50px;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        input[type="number"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 4px;
-            border: 1px solid #ccc;
+        h1 {
+            color: #343a40;
         }
-        input[type="submit"] {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #555;
-        }
-        h3 {
+        .result {
             margin-top: 20px;
-            background-color: #fff;
-            padding: 10px;
-            border-radius: 4px;
+            font-size: 1.5em;
+            color: #007bff;
         }
     </style>
 </head>
 <body>
-    <h2>Introduce the values</h2>
-    
-    <form action="/" method="post">
-        Tiempo en Soledad: <input type="number" step="any" name="val1" required><br><br>
-        Miedo a la exposicion: <input type="number" step="any" name="val2" required><br><br>
-        Asistenci a eventos: <input type="number" step="any" name="val3" required><br><br>
-        Salidas: <input type="number" step="any" name="val4" required><br><br>
-        Agotamiento al socializar: <input type="number" step="any" name="val5" required><br><br>
-        Tamaño circulo social: <input type="number" step="any" name="val6" required><br><br>
-        Frecuencia de exposicion: <input type="number" step="any" name="val7" required><br><br>
-        <input type="submit" value="Predict">
-    </form>
-    
-    {% if prediction != None %}
-        <h3>Prediction: {{ prediction }}</h3>
-    {% endif %}
+    <div class="container">
+        <h1 class="text-center">Predicción de Personalidad</h1>
+        <form method="POST">
+            <div class="form-group">
+                <label for="val1">Apertura a nuevas experiencias:</label>
+                <input type="number" step="0.1" min="1" max="5" name="val1" class="form-control" required placeholder="Ingrese valor 1-5">
+                <small class="form-text text-muted">Escala de 1 (baja) a 5 (alta)</small>
+            </div>
+            <div class="form-group">
+                <label for="val2">Responsabilidad:</label>
+                <input type="number" step="0.1" min="1" max="5" name="val2" class="form-control" required placeholder="Ingrese valor 1-5">
+                <small class="form-text text-muted">Escala de 1 (desorganizado) a 5 (organizado)</small>
+            </div>
+            <div class="form-group">
+                <label for="val3">Extroversión:</label>
+                <input type="number" step="0.1" min="1" max="5" name="val3" class="form-control" required placeholder="Ingrese valor 1-5">
+                <small class="form-text text-muted">Escala de 1 (introvertido) a 5 (extrovertido)</small>
+            </div>
+            <div class="form-group">
+                <label for="val4">Amabilidad:</label>
+                <input type="number" step="0.1" min="1" max="5" name="val4" class="form-control" required placeholder="Ingrese valor 1-5">
+                <small class="form-text text-muted">Escala de 1 (distante) a 5 (empático)</small>
+            </div>
+            <div class="form-group">
+                <label for="val5">Estabilidad emocional:</label>
+                <input type="number" step="0.1" min="1" max="5" name="val5" class="form-control" required placeholder="Ingrese valor 1-5">
+                <small class="form-text text-muted">Escala de 1 (reactivo) a 5 (estable)</small>
+            </div>
+            <div class="form-group">
+                <label for="val6">Habilidades sociales:</label>
+                <input type="number" step="0.1" min="1" max="5" name="val6" class="form-control" required placeholder="Ingrese valor 1-5">
+                <small class="form-text text-muted">Escala de 1 (torpe) a 5 (hábil)</small>
+            </div>
+            <div class="form-group">
+                <label for="val7">Energía y actividad:</label>
+                <input type="number" step="0.1" min="1" max="5" name="val7" class="form-control" required placeholder="Ingrese valor 1-5">
+                <small class="form-text text-muted">Escala de 1 (sedentario) a 5 (activo)</small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Predecir</button>
+        </form>
+        {% if prediction %}
+            <div class="result text-center">
+                <strong>Predicción:</strong> {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
