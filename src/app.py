@@ -1,8 +1,14 @@
 from flask import Flask, request, render_template
 from pickle import load
+import os
 
 app = Flask(__name__)
-model = load(open("../models/random_forest_classifier_default_42.sav", "rb"))
+
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(current_dir, '../models/random_forest_classifier_default_42.sav')
+model = load(open(model_path, "rb"))
+
+
 class_dict = {
     "0": "Introvertido",
     "1": "Extrovertido",
