@@ -5,7 +5,7 @@ import os
 app = Flask(__name__)
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
-model_path = os.path.join(current_dir,"./models/random_forest_classifier_default_42.sav")
+model_path = os.path.join(current_dir,"../data/processed/random_forest_classifier_default_42.sav")
 model = load(open(model_path, "rb"))
 
 
